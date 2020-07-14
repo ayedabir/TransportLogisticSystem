@@ -4,8 +4,8 @@ using TransportLogisticSystem.Models;
 
 namespace TransportLogisticSystem
 {
-    public interface IScheduleLoader
+    public interface IFileLoader<T>
     {
-        IEnumerable<FlightSchedule> LoadSchedule(string filePath);
+        IEnumerable<T> Load(string filePath);
     }
 }

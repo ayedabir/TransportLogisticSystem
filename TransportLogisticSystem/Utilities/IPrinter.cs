@@ -3,8 +3,8 @@ using TransportLogisticSystem.Models;
 
 namespace TransportLogisticSystem
 {
-    public interface ISchedulePrinter
+    public interface IPrinter
     {
-        void PrintSchedule(FlightSchedule schedule);
+        void Print<T>(T objectToPrint);
     }
 }

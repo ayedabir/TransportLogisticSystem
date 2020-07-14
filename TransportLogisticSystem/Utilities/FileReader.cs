@@ -7,9 +7,14 @@ namespace TransportLogisticSystem.Utilities
 {
     public class FileReader: IFileReader
     {
-        public List<string> ReadFile(string filePath)
+        public List<string> ReadLines(string filePath)
         {
             return File.ReadAllLines(filePath).ToList();
+        }
+
+        public string ReadAll(string filePath)
+        {
+            return File.ReadAllText(filePath);
         }
     }
 }

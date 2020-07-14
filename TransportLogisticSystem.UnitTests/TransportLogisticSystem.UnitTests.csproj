@@ -53,9 +53,14 @@
     <Reference Include="AutoFixture.AutoMoq">
       <HintPath>..\packages\AutoFixture.AutoMoq.4.13.0\lib\net452\AutoFixture.AutoMoq.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ScheduleLoaderTest.cs" />
+    <Compile Include="OrderLoaderTest.cs" />
+    <Compile Include="OrderSchedulerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,6 +5,7 @@ namespace TransportLogisticSystem.Utilities
 {
     public interface IFileReader
     {
-        List<string> ReadFile(string filePath);
+        List<string> ReadLines(string filePath);
+        string ReadAll(string filePath);
     }
 }

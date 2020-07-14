@@ -7,7 +7,7 @@ using TransportLogisticSystem.Utilities;
 
 namespace TransportLogisticSystem
 {
-    public class ScheduleLoader: IScheduleLoader
+    public class ScheduleLoader: IFileLoader<FlightSchedule>
     {
         private readonly IFileReader fileReader;
         public ScheduleLoader(IFileReader fileReader)
@@ -15,8 +15,8 @@ namespace TransportLogisticSystem
             this.fileReader = fileReader;
         }
 
-        public IEnumerable<FlightSchedule> LoadSchedule(string filePath) {
-            var fileLines = fileReader.ReadFile(filePath);
+        public IEnumerable<FlightSchedule> Load(string filePath) {
+            var fileLines = fileReader.ReadLines(filePath);
             List<FlightSchedule> schedules = new List<FlightSchedule>();
             int dayNumber = 0;
             foreach (string line in fileLines)

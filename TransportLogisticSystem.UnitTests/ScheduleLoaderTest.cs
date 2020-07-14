@@ -27,12 +27,12 @@ namespace TransportLogisticSystem.UnitTests
         public void TestLoadingEmptyFile()
         {
             var path = fixture.Create<string>();
-            fileReaderMock.Setup(mock => mock.ReadFile(It.IsAny<string>())).Returns(new List<string>());
+            fileReaderMock.Setup(mock => mock.ReadLines(It.IsAny<string>())).Returns(new List<string>());
 
-            var result = scheduleLoader.LoadSchedule(path);
+            var result = scheduleLoader.Load(path);
 
             Assert.IsEmpty(result);
-            fileReaderMock.Verify(mock => mock.ReadFile(path), Times.Once);
+            fileReaderMock.Verify(mock => mock.ReadLines(path), Times.Once);
         }
 
 
@@ -42,13 +42,16 @@ namespace TransportLogisticSystem.UnitTests
             var path = fixture.Create<string>();
             var line1 = "Day 1:";
             var line2 = "Flight 1: Montreal airport (YUL) to Toronto (YYZ)";
-            fileReaderMock.Setup(mock => mock.ReadFile(It.IsAny<string>()))
+            fileReaderMock.Setup(mock => mock.ReadLines(It.IsAny<string>()))
                 .Returns(new List<string> { line1,line2});
 
-            var result = scheduleLoader.LoadSchedule(path).ToList();
+            var result = scheduleLoader.Load(path).ToList();
 
             Assert.AreEqual(1, result.Count);
-            fileReaderMock.Verify(mock => mock.ReadFile(path), Times.Once);
+            Assert.AreEqual(1, result.FirstOrDefault()?.FlightNumber);
+            Assert.AreEqual("YUL", result.FirstOrDefault()?.DepartureCity);
+            Assert.AreEqual("YYZ", result.FirstOrDefault()?.ArrivalCity);
+            fileReaderMock.Verify(mock => mock.ReadLines(path), Times.Once);
         }
     }
 }

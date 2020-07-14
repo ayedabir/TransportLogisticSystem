@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -38,14 +41,18 @@
     <Compile Include="DryIoc\FastExpressionCompiler.cs" />
     <Compile Include="DryIoc\Expression.cs" />
     <Compile Include="DryIoc\Container.cs" />
-    <Compile Include="Services\IScheduleLoader.cs" />
-    <Compile Include="Services\IScheduleManager.cs" />
-    <Compile Include="Services\ISchedulePrinter.cs" />
+    <Compile Include="Services\IFileLoader.cs" />
+    <Compile Include="Services\ITransportManager.cs" />
     <Compile Include="Services\ScheduleLoader.cs" />
-    <Compile Include="Services\ScheduleManager.cs" />
-    <Compile Include="Services\SchedulePrinter.cs" />
+    <Compile Include="Services\TransportManager.cs" />
     <Compile Include="Utilities\FileReader.cs" />
     <Compile Include="Utilities\IFileReader.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Services\OrderLoader.cs" />
+    <Compile Include="Utilities\ConsolePrinter.cs" />
+    <Compile Include="Utilities\IPrinter.cs" />
+    <Compile Include="Services\OrderScheduler.cs" />
+    <Compile Include="Services\IOrderScheduler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -58,6 +65,7 @@
   <ItemGroup>
     <None Include="Data\ScheduleData\schedule.txt" />
     <None Include="packages.config" />
+    <None Include="Data\OrderData\coding-assigment-orders.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
