@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportLogisticSystem", "TransportLogisticSystem\TransportLogisticSystem.csproj", "{709F4375-6F6A-446E-86AA-E68C667A784E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportLogisticSystem.UnitTests", "TransportLogisticSystem.UnitTests\TransportLogisticSystem.UnitTests.csproj", "{2090467E-AF9B-46DB-933D-D877997C64A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{709F4375-6F6A-446E-86AA-E68C667A784E}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{709F4375-6F6A-446E-86AA-E68C667A784E}.Debug|anycpu.Build.0 = Debug|anycpu
+		{709F4375-6F6A-446E-86AA-E68C667A784E}.Release|anycpu.ActiveCfg = Release|anycpu
+		{709F4375-6F6A-446E-86AA-E68C667A784E}.Release|anycpu.Build.0 = Release|anycpu
+		{2090467E-AF9B-46DB-933D-D877997C64A2}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{2090467E-AF9B-46DB-933D-D877997C64A2}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{2090467E-AF9B-46DB-933D-D877997C64A2}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{2090467E-AF9B-46DB-933D-D877997C64A2}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

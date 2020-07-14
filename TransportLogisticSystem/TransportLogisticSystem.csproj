@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\DryIoc.4.2.3\build\DryIoc.props" Condition="Exists('..\packages\DryIoc.4.2.3\build\DryIoc.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{709F4375-6F6A-446E-86AA-E68C667A784E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TransportLogisticSystem</RootNamespace>
+    <AssemblyName>TransportLogisticSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\FlightSchedule.cs" />
+    <Compile Include="DryIoc\ImTools.cs" />
+    <Compile Include="DryIoc\FastExpressionCompiler.cs" />
+    <Compile Include="DryIoc\Expression.cs" />
+    <Compile Include="DryIoc\Container.cs" />
+    <Compile Include="Services\IScheduleLoader.cs" />
+    <Compile Include="Services\IScheduleManager.cs" />
+    <Compile Include="Services\ISchedulePrinter.cs" />
+    <Compile Include="Services\ScheduleLoader.cs" />
+    <Compile Include="Services\ScheduleManager.cs" />
+    <Compile Include="Services\SchedulePrinter.cs" />
+    <Compile Include="Utilities\FileReader.cs" />
+    <Compile Include="Utilities\IFileReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Data\ScheduleData\" />
+    <Folder Include="Data\OrderData\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\ScheduleData\schedule.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
